@@ -43,14 +43,12 @@ const addcontact = (nombre1,apellido1,telefono1,id1, ubicacion1) => {
 }
 addcontact('maria','cortes',3145657832,5, ['ciudad:Cali, direccion:Privada'])
 addcontact('jose', 'marquez',3212987654, 6, ['ciudad:Pereira, direccion:Privada'])
+console.log(myarray);
 
 const mostrarLista = (lista) => {
-
-    console.log(lista);
+ console.log(lista);
 }
 mostrarLista(myarray)
-//mostrarLista(contact1)
-
 const deleteContact = () => {
 myarray.pop()
 }
@@ -65,4 +63,19 @@ const deleteEspecific = (nombre) => {
 myarray=newArray
 }
 deleteEspecific('Mercedes')
+console.log(myarray);
+
+const changeName = (nombre, cambioNombre)=>{
+ const temp = [...myarray];
+  temp.map((element) => {
+    if (element.nombre == nombre) {
+        element.nombre = cambioNombre;
+        return element;
+      } else {
+        return element;
+      }
+    });
+}
+
+    changeName('Sebastian','camilo')
 console.log(myarray);
